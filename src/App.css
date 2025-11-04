@@ -22,3 +22,30 @@ h1 {
   text-align: center;
   margin-bottom: 1rem;
 }
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.checkMarks {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-grow: 1;
+}
+
+.checkMarks img {
+  width: 30px;
+  max-width: 30px;
+  height: 30px;
+  max-height: 30px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 8px;
+  min-width: 60px;
+  justify-content: flex-start;
+}

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import checkImg from './images/check.png';
+import xImg from './images/x.png';
 
 function TodoList(){
     const [todos, setTodos] = useState([]);
@@ -39,13 +41,16 @@ function TodoList(){
             </form>
             <ul>
                 {todos.map((todo, index) => (
-                    <li key={index}>
-                        <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
-                        {todo.text}
+                    <li key={index} className='todoItem'>
+                        <span className='checkMarks'>
+                            <img src={todo.completed ? checkImg : xImg} className='checkMarks img' alt="Status" />
+                            {todo.text}
                         </span>
-                        <button onClick={() => handleToggleComplete(index)}>
-                            {todo.completed ? 'Undo' : 'Complete'}
-                        </button>
+                        <div className='buttonGroup'>
+                            <button onClick={() => handleToggleComplete(index)}>
+                                {todo.completed ? 'Undo' : 'Complete'}
+                            </button>
+                        </div>
                         <button onClick={() => handleDelete(index)}>Delete</button>
                     </li>
                 ))}

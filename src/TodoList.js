@@ -28,17 +28,19 @@ function TodoList(){
     }
 
     return(
-        <div>
+        <div className='main-box'>
             <h1>Todo List</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                type="text"
-                value={inputValue}
-                onChange={handleChange}
-                placeholder="Add a new task"
-                />
-                <button type="submit">Add Todo</button>
-            </form>
+            <span className='header'>
+                <form onSubmit={handleSubmit}>
+                    <input
+                    type="text"
+                    value={inputValue}
+                    onChange={handleChange}
+                    placeholder="Add a new task"
+                    />
+                    <button type="submit">Add Todo</button>
+                </form>
+            </span>
             <ul>
                 {todos.map((todo, index) => (
                     <li key={index} className='todoItem'>
@@ -50,8 +52,9 @@ function TodoList(){
                             <button onClick={() => handleToggleComplete(index)}>
                                 {todo.completed ? 'Undo' : 'Complete'}
                             </button>
+                        
+                            <button onClick={() => handleDelete(index)}>Delete</button>
                         </div>
-                        <button onClick={() => handleDelete(index)}>Delete</button>
                     </li>
                 ))}
             </ul>

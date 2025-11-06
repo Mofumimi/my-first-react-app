@@ -14,6 +14,8 @@ body {
   padding: 6rem;
   box-shadow: 0 0 28px 6px #a5bfff88;
   font-size: x-large;
+  max-width: 700px;
+  margin: 0;
 }
 
 h1 {
@@ -27,6 +29,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 3px;
+  word-break: break-word;
 }
 
 .checkMarks {
@@ -46,6 +49,12 @@ h1 {
 .buttonGroup {
   display: flex;
   gap: 8px;
-  min-width: 60px;
+  min-width: 145px;
   justify-content: flex-start;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
